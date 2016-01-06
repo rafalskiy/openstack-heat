@@ -56,16 +56,16 @@ then
         --description "Orchestration" heat-cfn
 
     openstack endpoint create \
-        --publicurl http://${KEYSTONE_HOST_IP}:8004/v1/%\(tenant_id\)s \
-        --internalurl http://${KEYSTONE_HOST_IP}:8004/v1/%\(tenant_id\)s \
-        --adminurl http://${KEYSTONE_HOST_IP}:8004/v1/%\(tenant_id\)s \
+        --publicurl http://${NOVA_HOST_IP}:8004/v1/%\(tenant_id\)s \
+        --internalurl http://${NOVA_HOST_IP}:8004/v1/%\(tenant_id\)s \
+        --adminurl http://${NOVA_HOST_IP}:8004/v1/%\(tenant_id\)s \
         --region RegionOne \
         orchestration
 
     openstack endpoint create \
-        --publicurl http://${KEYSTONE_HOST_IP}:8000/v1 \
-        --internalurl http://${KEYSTONE_HOST_IP}:8000/v1 \
-        --adminurl http://${KEYSTONE_HOST_IP}:8000/v1 \
+        --publicurl http://${NOVA_HOST_IP}:8000/v1 \
+        --internalurl http://${NOVA_HOST_IP}:8000/v1 \
+        --adminurl http://${NOVA_HOST_IP}:8000/v1 \
         --region RegionOne \
         cloudformation
 
